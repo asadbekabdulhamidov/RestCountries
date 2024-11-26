@@ -1,0 +1,261 @@
+:root {
+  --bg-white-color: #ffffff;
+  --bg-pink-color: #fafafa;
+  --text-black-color: #111517;
+  --input-placeholder-color: #848484;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@100;200;300;400;500;600;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+img {
+  margin: 0;
+}
+
+.dark-mode {
+  --bg-white-color: #2b3844;
+  --bg-pink-color: #202c36;
+  --text-black-color: #ffffff;
+  --input-placeholder-color: #ffffff;
+}
+
+.container {
+  width: 100%;
+  max-width: 1340px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: var(--bg-pink-color);
+}
+
+/* header style */
+header {
+  padding: 24px 0;
+  background-color: var(--bg-white-color);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.site__logo a {
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32.7px;
+  color: var(--text-black-color);
+}
+.dark__mode,
+.light__mode {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.light__mode {
+  color: #fff;
+}
+
+.main {
+  padding-top: 48px;
+}
+.input__wrap {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 48px;
+}
+
+.search i {
+  color: var(--input-placeholder-color);
+  font-size: 18px;
+}
+.search input {
+  border: none;
+  outline: none;
+  color: var(--input-placeholder-color);
+  font-size: 18px;
+  background-color: var(--bg-white-color);
+}
+.search {
+  display: flex;
+  gap: 10px;
+  width: 480px;
+  padding: 19px 32px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: var(--bg-white-color);
+  border-radius: 10px;
+}
+
+select,
+option {
+  width: 200px;
+  padding: 18px 24px;
+  padding-right: 24px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  background-color: var(--bg-white-color);
+  color: var(--text-black-color);
+}
+option {
+  padding: 20px 0;
+}
+
+.countries {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.country {
+  width: 264px;
+}
+
+.country img {
+  width: 264px;
+  height: 160px;
+}
+
+.country__intro {
+  background-color: var(--bg-white-color);
+  padding: 24px 24px 46px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  color: var(--text-black-color);
+}
+.country__intro span {
+  color: var(--input-placeholder-color);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal {
+  border: 2px solid red;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-white-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 40px;
+}
+
+.modal__intro {
+}
+.country__name {
+  margin-bottom: 23px;
+}
+.country__desc {
+  display: flex;
+  justify-content: space-between;
+}
+.country__desc p {
+  margin-bottom: 10px;
+  color: var(--text-black-color);
+}
+.country__border {
+  margin-top: 23px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.country__border span {
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.close i {
+  font-size: 40px;
+}
+.hidden {
+  display: none;
+}
+
+.closeEl {
+  display: none;
+}
